@@ -406,7 +406,7 @@ def voi_process(
     trmdir = trmout['trmdir']
 
     # > trimmed and upsampled PET file
-    out['ftrm'] = trmout['ftrm']
+        out['ftrm'] = trmout['ftrm']
     out['trim_scale'] = trmout['trim_scale']
     #--------------------------------------------------
 
@@ -433,7 +433,7 @@ def voi_process(
             del_uncmpr=True)
 
         flbl_pet = nimpa.resample_spm(
-            ftrm['fimi'][0],
+            out['ftrm'], #ftrm['fimi'][0],
             lblpth,
             spm_res['faff'],
             outpath=trmdir,
