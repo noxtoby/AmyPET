@@ -472,7 +472,7 @@ def voi_process(
                 suvr[rvoi][voi] = voival[voi]['avg'] / ref
 
             # > get the static trimmed image:
-            imsuvr = nimpa.getnii(out['ftrm']['im'], output='all')
+            imsuvr = nimpa.getnii(out['ftrm']['fimi'][0], output='all')
 
             fsuvr = trmdir /  'SUVr_ref-{}_{}'.format(rvoi, suvr_preproc['fstat'].name)
             # > save SUVr image
