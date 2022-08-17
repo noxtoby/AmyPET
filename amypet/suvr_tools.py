@@ -433,7 +433,7 @@ def voi_process(
             del_uncmpr=True)
 
         flbl_pet = nimpa.resample_spm(
-            out['ftrm'], #ftrm['fimi'][0],
+            out['ftrm'],
             lblpth,
             spm_res['faff'],
             outpath=trmdir,
@@ -455,7 +455,7 @@ def voi_process(
         mask_dir = trmdir/'masks'
     else:
         mask_dir = None
-    voival = extract_vois(ftrm['im'], plbl_dct, voi_dct, outpath=mask_dir, output_masks=output_masks)
+    voival = extract_vois(out['ftrm'], plbl_dct, voi_dct, outpath=mask_dir, output_masks=output_masks)
 
     
     # > calculate SUVr if reference regions is given
