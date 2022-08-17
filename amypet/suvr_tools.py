@@ -400,7 +400,7 @@ def voi_process(
     # TRIMMING / UPSCALING
     # > derive the scale of upscaling/trimming using the current
     # > image/voxel sizes
-    trmout = r_trimup(suvr_preproc['fstat'], lblpth, store_img_intrmd=True)
+    trmout = r_trimup(suvr_preproc['fstat'], lblpth, outpath = outpath, store_img_intrmd=True)
 
     # > trimmed folder
     trmdir = trmout['trmdir']
