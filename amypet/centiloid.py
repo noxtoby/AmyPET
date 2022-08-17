@@ -62,6 +62,7 @@ def load_masks(mskpath, voxsz=2):
 
 def run(fpets,
         fmris,
+        atlases = None,
         tracer='pib',
         flip_pet=None,
         bias_corr=True,
@@ -152,7 +153,10 @@ def run(fpets,
     # > AmyPET centiloid module path
     cpth = Path(os.path.realpath(__file__))
 
-    fmasks, masks = load_masks(cpth.parent/'CL_masks', voxsz=voxsz)
+    if atlases is None:
+        fmasks, masks = load_masks(cpth.parent/'CL_masks', voxsz=voxsz)
+    else:
+        fmasks, masks = load_masks(atlases, voxsz=voxsz)
     #-------------------------------------------------------------
 
     log.info('iterate through all the input data...')
