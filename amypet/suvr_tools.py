@@ -406,7 +406,7 @@ def voi_process(
     trmdir = trmout['trmdir']
 
     # > trimmed and upsampled PET file
-    out['ftrm'] = trmout['ftrm']
+    out['ftrm'] = trmout['ftrm']; ftrm = out['ftrm']
     out['trim_scale'] = trmout['trim_scale']
     #--------------------------------------------------
 
@@ -420,8 +420,7 @@ def voi_process(
         logging.info(f'i> registration with smoothing of {reg_fwhm_pet}, {reg_fwhm_mri} mm for reference and floating images respectively')
     
         spm_res = nimpa.coreg_spm(
-            #ftrm['fimi'][0], # replaced by next line
-            out['ftrm']['fimi'][0],
+            ftrm['fimi'][0],
             fmri,
             fwhm_ref = reg_fwhm_pet,
             fwhm_flo = reg_fwhm_mri,
