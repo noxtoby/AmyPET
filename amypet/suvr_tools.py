@@ -420,7 +420,7 @@ def voi_process(
         logging.info(f'i> registration with smoothing of {reg_fwhm_pet}, {reg_fwhm_mri} mm for reference and floating images respectively')
     
         spm_res = nimpa.coreg_spm(
-            out['ftrm']['fimi'],
+            out['ftrm'],
             fmri,
             fwhm_ref = reg_fwhm_pet,
             fwhm_flo = reg_fwhm_mri,
